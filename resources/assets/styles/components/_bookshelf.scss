@@ -1,0 +1,53 @@
+@import "~sass-mq";
+
+.bookshelf {
+  &__inner {
+    padding: 4rem 1rem;
+
+    @include mq($from: tablet) {
+      display: flex;
+      align-items: flex-start;
+      padding: 4rem 5vw;
+    }
+  }
+
+  &__single {
+    padding-bottom: 4rem;
+
+    @include mq($from: tablet) {
+      flex: 1.5 0 0;
+      position: sticky;
+      top: 0;
+      padding-right: 1rem;
+    }
+  }
+
+  &__single h2 {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  &__columns {
+    @include mq($from: tablet) {
+      columns: 3 11rem;
+      column-fill: auto;
+      flex: 2 2 0;
+    }
+  }
+
+  &__columns &__entry {
+    padding-bottom: 4rem;
+
+    @include mq($from: tablet) {
+      border-left: solid 1px #a5a195;
+      break-inside: avoid-column;
+      padding-left: 1em;
+    }
+  }
+
+  &__title--center {
+    font-size: 1.6rem;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+  }
+}

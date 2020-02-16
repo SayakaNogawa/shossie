@@ -1,0 +1,15 @@
+.entry-meta {
+  color: #a5a195;
+  font-family: $sans-serif;
+
+  &__category {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+  }
+
+  a {
+    @extend %hover-anime;
+
+    color: #a5a195;
+  }
+}

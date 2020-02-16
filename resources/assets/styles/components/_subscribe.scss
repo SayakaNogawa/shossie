@@ -1,0 +1,12 @@
+.subscribe {
+  display: flex;
+  text-align: center;
+  border-bottom: solid 1px #333;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__email-form { padding-bottom: 1rem; }
+
+  &__submit-button { border: none; }
+}
+

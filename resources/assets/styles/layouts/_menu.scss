@@ -1,0 +1,125 @@
+.globalmenu {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  position: fixed;
+  transform: translateX(-105%);
+
+  %__background {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    position: absolute;
+    transform: translateX(-105%);
+  }
+
+  &__background {
+    @extend %__background;
+
+    &--under {
+      @extend %__background;
+
+      background-color: black;
+    }
+
+    &--middle {
+      @extend %__background;
+
+      background-color: #e0aa54;
+      transition: transform 0.4s cubic-bezier(0, 0, 0.9, 1);
+    }
+
+    &--top {
+      @extend %__background;
+
+      background-color: #f2e4d1;
+      transition: transform 0.8s cubic-bezier(0, 0, 0.8, 1);
+    }
+  }
+
+  &__nav-wrapper {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 4;
+    padding: 0 1rem;
+
+    @include mq($from: tablet) {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
+
+  &__nav-item-wrapper {
+    .menu {
+      font-size: 2rem;
+      line-height: 3rem;
+
+      a { @extend %hover-anime; }
+    }
+  }
+
+  &__nav-about {
+    @include mq($from: tablet) {
+      width: 50%;
+    }
+  }
+
+  &__nav-title {
+    margin: 2rem 0;
+    font-size: 1.5rem;
+
+    @include mq($from: tablet) {
+      margin: 0 0 2rem;
+    }
+  }
+
+  &__info-discription {
+    margin-bottom: 4rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+
+    @include mq($from: tablet) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__info {
+    font-size: 1rem;
+  }
+
+  &__info-link {
+    text-decoration: underline;
+
+    &:hover { text-decoration: none; }
+  }
+}
+
+.globalmenu.is-active {
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.globalmenu__background--under.is-active {
+  z-index: 1;
+  opacity: 0.7;
+  transform: translateX(0);
+}
+
+.globalmenu__background--middle.is-active {
+  z-index: 2;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.globalmenu__background--top.is-active {
+  z-index: 3;
+  opacity: 1;
+  transform: translateX(0);
+}

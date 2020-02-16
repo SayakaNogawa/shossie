@@ -1,0 +1,35 @@
+.futher-reading {
+  margin: 4rem auto;
+  width: 90vw;
+
+  @include mq($from: tablet) {
+    margin: 8rem auto;
+  }
+
+  .widget-title {
+    font-family: $sans-serif;
+    font-size: 1.5rem;
+  }
+
+  .related-posts-list {
+    margin: 4rem 0;
+    columns: 4 13rem;
+    column-gap: 2rem;
+
+    .related-post {
+      margin: 0;
+      break-inside: avoid-column;
+
+      .attachment-medium.size-medium.wp-post-image {
+        object-fit: cover;
+        width: 100%;
+      }
+
+      .related-post-title {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+        font-weight: 200;
+      }
+    }
+  }
+}
