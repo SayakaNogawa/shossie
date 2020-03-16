@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 // import external dependencies
 import 'jquery';
-import anime from 'animejs';
 
 // Import everything from autoload
 import './autoload/**/*'
@@ -25,4 +24,3 @@ const routes = new Router({
 // Load Events
 jQuery(document).ready(() => routes.loadEvents());
 
-// amime.js

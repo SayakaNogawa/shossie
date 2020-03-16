@@ -125,7 +125,7 @@ function wcr_related_posts($args = array()) {
     }
 
     // query
-    $related_posts = get_posts(array(
+    $posts = get_posts(array(
         'post__not_in' => (array) $args['post_id'],
         'post_type' => $args['post_type'],
         'tax_query' => array(

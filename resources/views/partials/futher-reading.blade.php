@@ -1,23 +1,22 @@
-<?php if (!empty($related_posts)) { ?>
+@if (!empty($posts))
   <div class="futher-reading">
-    <h3 class="widget-title"><?php _e('Related articles', 'wpcrumbs'); ?></h3>
-      <ul class="related-posts-list">
-        <?php foreach ($related_posts as $post) { setup_postdata($post); ?>
-          <li class="related-post">
-          <a class="related-title-link" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-            <?php if (has_post_thumbnail()) { ?>
-                    <div class="thumb">
-                        <?php echo get_the_post_thumbnail(null, 'medium', array('alt' => the_title_attribute(array('echo' => false)))); ?>
-                    </div>
-                    <?php } ?>
-                    <p class="category"><?php get_the_category(); ?></h4>
-                    <h4 class="related-post-title"><?php the_title(); ?></h4>
-                    <p><?php the_excerpt(); ?></p>
-                </a>
-            </li>
-            <?php } ?>
-        </ul>
-        <div class="clearfix"></div>
-    </div>
-<?php
-}
+    <h3 class="futher-reading__section-title">Futher reading</h3>
+    <ul class="futher-reading__posts">
+      @foreach ($posts as $post) @php setup_postdata($post) @endphp
+        <li class="futher-reading__post">
+          <a class="futher-reading__post_link" href="{{ the_permalink() }}" title="{{ the_title_attribute() }}">
+            @if (has_post_thumbnail())
+              <div class="futher-reading__post_thumbnail">
+                {{ get_the_post_thumbnail() }}
+              </div>
+            @endif
+            <p class="futher-reading__post_category">{{ get_the_category() }}</p>
+            <h4 class="futher-reading__post_title">{{ the_title() }}</h4>
+            <p>{{ the_excerpt() }}</p>
+          </a>
+        </li>
+      @endforeach
+    </ul>
+    <div class="clearfix"></div>
+  </div>
+@endif

@@ -36,13 +36,6 @@
     }
   }
 
-  &__text {
-    @include mq($from: tablet) {
-      position: sticky;
-      top: 0;
-    }
-  }
-
   &__img {
     @include mq($from: tablet) {
       columns: 2;
