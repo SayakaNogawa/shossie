@@ -99,55 +99,28 @@ Container::getInstance()
  * @return
  */
 
-function wcr_related_posts($args = array()) {
-    global $post;
+function query_args() {
 
-    // default args
-    $args = wp_parse_args($args, array(
-        'post_id' => !empty($post) ? $post->ID : '',
-        'taxonomy' => 'category',
-        'limit' => 4,
-        'post_type' => !empty($post) ? $post->post_type : 'post',
-        'orderby' => 'date',
-        'order' => 'DESC'
-    ));
+    $post_id = get_the_ID();
+    $ids = array();
+    $categories = get_the_category($post_id);
 
-    // check taxonomy
-    if (!taxonomy_exists($args['taxonomy'])) {
-        return;
+    if (!empty($categories) && is_wp_error($categories)) {
+        foreach ($categories as $category) {
+            array_push($ids, $category->term_id);
+        }
     }
 
-    // post taxonomies
-    $taxonomies = wp_get_post_terms($args['post_id'], $args['taxonomy'], array('fields' => 'ids'));
+    $current_post_type = get_post_type($post_id);
+    $query_args = array( 
+        'category__in'   => $ids,
+        'post_type'      => $current_post_type,
+        'post_not_in'    => array($post_id),
+        'posts_per_page'  => '5'
+     );
 
-    if (empty($taxonomies)) {
-        return;
-    }
-
-    // query
-    $posts = get_posts(array(
-        'post__not_in' => (array) $args['post_id'],
-        'post_type' => $args['post_type'],
-        'tax_query' => array(
-            array(
-                'taxonomy' => $args['taxonomy'],
-                'field' => 'term_id',
-                'terms' => $taxonomies
-            ),
-        ),
-        'posts_per_page' => $args['limit'],
-        'orderby' => $args['orderby'],
-        'order' => $args['order']
-    ));
-
-    include( locate_template('/views/partials/futher-reading.blade.php', false, false) );
-
-    wp_reset_postdata();
+     return $query_args;
 }
-
-add_filter( 'excerpt_length', function($length) {
-    return 20;
-} );
 
 /**
  * Navigation Menu Setup

@@ -21,15 +21,15 @@
     margin: 0;
     break-inside: avoid-column;
 
-    .attachment-medium.size-medium.wp-post-image {
-      object-fit: cover;
-      width: 100%;
-    }
-
     .related-post-title {
       margin: 1rem 0;
       font-size: 1.2rem;
       font-weight: 200;
     }
+  }
+
+  &__post_thumbnail {
+    object-fit: cover;
+    width: 100%;
   }
 }

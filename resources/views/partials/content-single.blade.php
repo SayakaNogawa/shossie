@@ -25,4 +25,4 @@
   </div>
 
 </article>
-  @php wcr_related_posts() @endphp
+@include('partials.futher-reading')
