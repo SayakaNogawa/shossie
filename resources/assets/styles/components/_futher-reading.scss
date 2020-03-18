@@ -11,21 +11,20 @@
     font-size: 1.5rem;
   }
 
-  &__posts {
+  &__posts-wrapper {
     margin: 4rem 0;
     columns: 4 13rem;
-    column-gap: 2rem;
   }
 
   &__post {
-    margin: 0;
+    margin: 0 0 2rem;
     break-inside: avoid-column;
+  }
 
-    .related-post-title {
-      margin: 1rem 0;
-      font-size: 1.2rem;
-      font-weight: 200;
-    }
+  &__post-title {
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    font-weight: 200;
   }
 
   &__post_thumbnail {

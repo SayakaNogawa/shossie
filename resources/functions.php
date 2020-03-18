@@ -134,3 +134,8 @@ function menu_setup() {
   }
   add_action( 'after_setup_theme', 'menu_setup' );
 
+  function excerpt_length_controller($length) {
+    return 25;
+  }
+
+  add_filter('excerpt_length', 'excerpt_length_controller', 999);
