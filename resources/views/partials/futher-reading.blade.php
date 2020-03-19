@@ -2,7 +2,7 @@
 @if ($related_post->have_posts())
 <article class="futher-reading">
   <h3 class="futher-reading__section-title">Futher reading</h3>
-  <section class="futher-reading__posts-wrapper">
+  <div class="futher-reading__posts-wrapper">
     @while($related_post->have_posts()) @php $related_post->the_post() @endphp
     <ul>
       <li class="futher-reading__post">
@@ -20,7 +20,7 @@
     </ul>
     @endwhile
     @php wp_reset_postdata() @endphp
-  </section>
+  </div>
 </article>
 @endif
 
