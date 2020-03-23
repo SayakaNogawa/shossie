@@ -1,6 +1,7 @@
 .futher-reading {
   margin: 4rem auto;
   width: 90vw;
+  background: #b6a6a2;
 
   @include mq($from: tablet) {
     margin: 8rem auto;
@@ -17,19 +18,19 @@
   }
 
   &__post {
-    padding: 0 1.5rem 2rem;
+    padding: 3rem 3rem 1rem 1rem;
     break-inside: avoid-column;
-    border-right: 1px solid $primary;
+    background: white;
   }
 
   &__post-title {
-    margin: 1rem 0;
-    font-size: 1.2rem;
+    margin: 6rem 0 0;
+    font-size: 2.2rem;
     font-weight: 200;
   }
 
   &__post_thumbnail {
     object-fit: cover;
-    width: 100%;
+    width: 60%;
   }
 }

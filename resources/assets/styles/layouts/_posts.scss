@@ -24,12 +24,15 @@
   }
 
   &__content {
-    padding: 4rem;
     width: 50vw;
-    background: #f7f1e6;
   }
 
   p {
     padding: 2rem;
+  }
+
+  figure {
+    width: 100%;
+    text-align: center;
   }
 }

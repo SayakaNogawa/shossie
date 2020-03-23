@@ -13,8 +13,7 @@
             </div>
           @endif
           @include('partials.entry-meta')
-          <h4 class="futher-reading__post_title">{{ the_title() }}</h4>
-          <p>{{ the_excerpt() }}</p>
+          <h4 class="futher-reading__post-title">{{ the_title() }}</h4>
         </a>
       </li>
     </ul>
