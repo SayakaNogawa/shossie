@@ -1,34 +1,85 @@
+@import "~sass-mq";
+
 .futher-reading {
-  display: flex;
   background: #b6a6a2;
-  padding: 6rem 2rem 2rem;
+  padding: 4rem 1rem 2rem;
+
+  @include mq($from: tablet) {
+    display: flex;
+    padding: 6rem 2rem 2rem;
+  }
 
   &__section-title {
-    width: 30%;
-    font-family: $sans-serif;
+    color: black;
+    text-align: center;
+
+    @include mq($from: tablet) {
+      position: sticky;
+      top: 20%;
+      width: 50%;
+      height: 100vh;
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    letter-spacing: -4px;
+
+    @include mq($from: tablet) {
+      font-size: 4.5rem;
+    }
+  }
+
+  &__subtitle {
     font-size: 2rem;
+    letter-spacing: -3px;
+
+    @include mq($from: tablet) {
+      font-size: 2.5rem;
+    }
   }
 
   &__posts-wrapper {
-    width: 70%;
-    columns: 3 13rem;
+    margin: 2rem 0 0;
+
+    @include mq($from: tablet) {
+      width: 50%;
+      columns: 2 15rem;
+    }
   }
 
   &__post {
     margin: 0 0 1rem;
-    padding: 1rem;
-    break-inside: avoid-column;
+    padding: 0 0.5rem;
     background: white;
+
+    @include mq($from: tablet) {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr 1fr;
+      grid-template-rows: 0.5fr 60% 1fr 1fr;
+      break-inside: avoid-column;
+    }
   }
 
-  &__post-title {
-    margin: 6rem 0 0;
-    font-size: 2rem;
-    font-weight: 200;
+  .entry-meta {
+    grid-column: 2 / 5;
+    grid-row: 1;
+    justify-self: end;
   }
 
   &__post_thumbnail {
-    object-fit: cover;
-    width: 60%;
+    grid-column: 2 / 5;
+    grid-row: 2;
+  }
+
+  &__post-title {
+    grid-column: 2 / 5;
+    grid-row: 4;
+    justify-self: end;
+    align-self: end;
+    font-size: 2rem;
+    letter-spacing: -2.5px;
+    font-weight: 200;
   }
 }

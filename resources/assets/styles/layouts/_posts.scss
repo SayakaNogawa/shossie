@@ -19,12 +19,21 @@
   }
 
   &__header-title {
-    font-size: 2rem;
+    font-size: 4rem;
+    letter-spacing: -4px;
     color: black;
   }
 
   &__content {
     width: 50vw;
+
+    img {
+      width: 80%;
+    }
+
+    img:nth-of-type(1) {
+      width: 100%;
+    }
   }
 
   p {
