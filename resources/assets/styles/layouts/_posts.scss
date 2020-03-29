@@ -31,12 +31,17 @@
       width: 80%;
     }
 
-  p {
-    padding: 2rem;
-  }
+    img:first-child {
+      width: 100%;
+    }
 
-  figure {
-    width: 100%;
-    text-align: center;
+    p {
+      padding: 2rem;
+    }
+
+    figure {
+      width: 100%;
+      text-align: center;
+    }
   }
 }
