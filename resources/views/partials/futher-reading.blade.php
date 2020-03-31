@@ -6,13 +6,7 @@
     <h3 class="futher-reading__title">Futher reading</h3>
     <p></p>
     <div class="futher-reading__line">
-      <svg 
-        xmlns="http://www.w3.org/2000/svg"
-        xmlns:xlink="http://www.w3.org/1999/xlink"
-        width="172.5px" height="172.5px">
-      <path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(0, 0, 0)"
-        d="M171.500,1.500 L1.500,171.500 "/>
-     </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="172.5px" height="172.5px"><path fill-rule="evenodd"  stroke="rgb(0, 0, 0)" stroke-width="1px" stroke-linecap="butt" stroke-linejoin="miter" fill="rgb(0, 0, 0)" d="M171.500,1.500 L1.500,171.500 "/></svg>
     </div>
     <h4 class="futher-reading__subtitle">
       Recommended article<br >

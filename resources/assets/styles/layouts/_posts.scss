@@ -2,7 +2,7 @@
   &__gird-container {
     display: flex;
     align-items: flex-start;
-    border-bottom: 2px solid black;
+    border: 2px solid black;
   }
 
   &__title {
@@ -10,7 +10,7 @@
     top: 0;
     height: 100vh;
     width: 50vw;
-    padding: 2rem;
+    padding: 4rem 2rem;
     border-right: 2px solid black;
   }
 
@@ -19,9 +19,10 @@
   }
 
   &__header-title {
-    font-size: 4rem;
-    letter-spacing: -4px;
-    color: black;
+    font-size: 8rem;
+    letter-spacing: -8px;
+    line-height: 6.5rem;
+    color: white;
   }
 
   &__content {

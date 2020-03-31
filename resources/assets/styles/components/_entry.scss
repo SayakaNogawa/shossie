@@ -1,0 +1,14 @@
+.entry {
+  &__title {
+    padding: 0 0 0.5rem;
+    font-size: 2rem;
+    letter-spacing: -2.5px;
+    line-height: 1.8rem;
+  }
+
+  &__summary p {
+    font-size: 1rem;
+    letter-spacing: -1px;
+    line-height: 1.2rem;
+  }
+}

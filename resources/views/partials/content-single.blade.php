@@ -2,8 +2,8 @@
 
   <div class="posts__gird-container">
     <div class="posts__title">
-      <h2 class="posts__header-title">{!! get_the_title() !!}</h2>
       @include('partials/entry-meta')
+      <h2 class="posts__header-title">{!! get_the_title() !!}</h2>
     </div>
     <div class="posts__content">{!! get_the_content() !!}</div>
   </div>

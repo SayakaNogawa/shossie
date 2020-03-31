@@ -1,6 +1,7 @@
 <div class="bookshelf">
   <div class="bookshelf__inner">
     <div class="bookshelf__single">
+      @include('partials/entry-meta')
       @if (have_posts()) @php the_post() @endphp
         @include('partials.content-'.get_post_type('numberposts=1'))
       @endif
